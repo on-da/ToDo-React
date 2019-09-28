@@ -1,38 +1,55 @@
-import React from "react";
+import React, {Component} from "react";
+import {connect} from "react-redux";
 
-class Todo extends React.Component {
-    render() {
-        const { text, completed } = this.props
+
+import Item from "./Item";
+
+class Todos extends Component{
+
+    render(){
+        let todo;
+        let todoNumber=0;
+        switch (this.props.mode){
+            case"default":
+            todo=this.props.todo.map((value)=>(
+                <Item key={value.message} 
+                      value={value} 
+                      index={todoNumber++} 
+                      />
+            ));
+            break;
+
+            case"find":
+            todo=this.props.ftodo.map((value)=>(
+                <Item key={value.message} 
+                      value={value} 
+                      index={todoNumber++} 
+                      />
+            ));
+            break;
+
+            case"delete":
+            todo=this.props.todo.map((value)=>(
+                <Item key={value.message} 
+                      value={value} 
+                      index={todoNumber++} 
+                      />
+            ));
+            break;
+
+            default:
+                todo=this.props.todo.map((value)=>(
+                    <Item key={value.message} 
+                          value={value} 
+                          index={todoNumber++} 
+                          />
+                ));
+        }
 
         return (
-            <div>
-                <label>
-                    <input type="checkbox"
-                        checked={completed}
-                        onChange={this.handleChangeCompleted}
-                    />
-                    {text}
-                </label>
-                <button onClick={this.handleClickEdit}>編集</button>
-                <button onClick={this.handleClickDelete}>削除</button>
-            </div>
+            <table><tbody>{todo}</tbody></table>
         );
     }
-
-    handleChangeCompleted = () => {
-        const { onChange, id, completed } = this.props;
-        onChange(id, "completed", !completed);
-    };
-
-    handleClickEdit = () => {
-        const { onChange, id, editing } = this.props;
-        onChange(id, "editing", !editing);
-    };
-
-    handleClickDelete = () => {
-        const { onDelete, id } = this.props
-        onDelete(id)
-    };
 }
 
-export default Todo;
+export default connect((state)=>state)(Todos);
