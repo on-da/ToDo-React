@@ -10,7 +10,7 @@ class FindForm extends Component {
         padding: "0px",
     }
     btn = {
-        fontSize: "12pt",
+        fontSize: "14pt",
         color: "#006",
         padding: "1px 10px",
     }

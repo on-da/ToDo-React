@@ -9,10 +9,7 @@ import PersistForm from "./compornents/PersistForm";
 
 //Appコンポーネント
 class App extends Component{
-    td={
-        width:"250px"
-    }
-
+    
     constructor(props){
         super(props);
     }
@@ -22,11 +19,13 @@ class App extends Component{
             <div>
                 <h1>やることリスト</h1>
                 <AddForm />
+                <td className="Find" style={this.td}><FindForm /></td>
+                    <td className="Del" style={this.td}><DelForm /></td>
+                    <td className="Persist" style={this.td}><PersistForm /></td>
                 <hr />
                 <table><tbody><tr>
-                    <td style={this.td}><FindForm /></td>
-                    <td style={this.td}><DelForm /></td>
-                    <td style={this.td}><PersistForm /></td>
+                    
+
                     </tr></tbody></table>
                     <ToDo />
             </div>

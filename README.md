@@ -24,6 +24,8 @@ Store.jsのaddReduceを変更して対応
 
 永続化のON/OFFが出来るようにチェックボックスを作る
 
+CSSを使って見栄えをよくする。Reactと相性がいいCSSフレームワークを探して使ってみる
+→material-uiがお勧めされてたのでそれを使ってみる
 
 
 
@@ -37,3 +39,6 @@ Store.jsのaddReduceを変更して対応
 
 
 ・Webサイト
+※Reactと相性のいいCSSフレームワークを探すのに参考にした
+[Qiita 1:https://qiita.com/usagi-f/items/9c675737ef44d0bfcb4e]
+[Qiita 2:https://qiita.com/kyrieleison/items/39ce30dd2d204791a9ea]

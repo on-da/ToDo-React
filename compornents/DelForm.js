@@ -4,15 +4,15 @@ import { deleteTodo } from "./Store";
 
 class DelForm extends Component {
     input = {
-        fontSize: "12pt",
+        fontSize: "14pt",
         color: "#006",
-        padding: "1px",
+        padding: "0px 1px 0px",
         margin: "5px 0px"
     }
     btn = {
-        fontSize: "10pt",
+        fontSize: "14pt",
         color: "#006",
-        padding: "2px 10px"
+        padding: "1px 10px"
     }
 
     constructor(props) {
